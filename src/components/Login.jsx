@@ -14,7 +14,7 @@ const Login = (props) => {
         localStorage.setItem('token', token)
     }
   return (
-    <div className="box">
+    <div className="loginForm">
       {`Login:`}
       <form onSubmit={handleSubmit}>
         <label htmlFor="username" >Username: </label>
