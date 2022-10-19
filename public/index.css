@@ -12,7 +12,7 @@ body {
   flex-grow: 1;
   max-height: 10%;
   min-height: 40px;
-  background-color: darkslategray;
+  background-color: black;
   color: white;
   display: flex;
   align-items: center;
@@ -81,7 +81,8 @@ h1{
   font-size: 8rem;
   font-family: 'ITC Benguiat W01';
   font-weight: 800;
-  color: #1c0502;
+  /* color: #1c0502; */
+  color:navy;
   text-shadow: -0.05rem -0.05rem 1px #ed2b12,
     0.05rem -0.05rem 1px #ed2b12,
     -0.05rem 0.05rem 1px #ed2b12,
