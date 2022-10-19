@@ -9,11 +9,10 @@ const Main = () => {
   return (
     <div id="main">
       <Navbar />
+    <Register/>
+    <Login/>
       <Posts/>
       
-      <Register />
-    
-      <Login/>
     </div>
   );
 };
