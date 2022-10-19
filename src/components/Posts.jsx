@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {getPosts} from '../api'
+import SinglePost from './SinglePost'
 
 
 const Posts = (props) => {
@@ -11,7 +12,7 @@ const Posts = (props) => {
         }
         fetchPosts()
     }, [])
-return ( <singlePost />)}
+return ( <SinglePost posts={posts} />)}
 
 
 

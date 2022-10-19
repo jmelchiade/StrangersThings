@@ -1,6 +1,8 @@
 import React from "react";
 
-const singlePost = () => {
+const SinglePost = (props) => {
+    const posts = props.posts
+    return(
     <div className='box'>{`This is your Posts Component`} 
     {
             posts.length ? posts.map((post) => {
@@ -10,18 +12,9 @@ const singlePost = () => {
         }
     </div>
 
-}
+)}
 
 
 
 
-
-
-
-
-
-
-
-
-
-export default singlePost;
+export default SinglePost;
