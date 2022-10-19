@@ -25,6 +25,21 @@ export async function registerUser(username, password) {
     return result.data
 }
 
+// export async function getUserInfo(token){
+//     fetch(`${BASE_URL}/api/${COHORT}/users/me`, {
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'Authorization': `Bearer ${token}`
+//         },
+//       })
+//       .then(response => await fetch (`${BASE_URL}/api/${COHORT}/users/me`))
+//         .then(result => await response.json()
+//         //   console.log(result);
+//           return result.data
+        
+//         .catch(console.error);
+// } 
+
 export async function loginUser(username, password) {
     const options = {
         method: 'POST',
