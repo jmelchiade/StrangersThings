@@ -4,15 +4,11 @@ import Posts from "./Posts";
 import Register from "./Register";
 import Login from "./Login";
 
-
 const Main = () => {
   return (
     <div id="main">
       <Navbar />
-    <Register/>
-    <Login/>
-      <Posts/>
-      
+      <Posts />
     </div>
   );
 };

@@ -1,10 +1,14 @@
 import React from "react";
+import Login from "./Login";
+import Register from "./Register";
 
 const Navbar = () => {
   return (
     <div id="navbar">
-<h2>I am Navbar</h2>
-  </div>
+      <h1>Stranger's Things</h1>
+      <Login />
+      <Register />
+    </div>
   );
 };
 
