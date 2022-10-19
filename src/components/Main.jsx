@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar } from "./";
 import Posts from "./Posts";
 import Register from "./Register";
+import Login from "./Login";
 
 
 const Main = () => {
@@ -9,8 +10,10 @@ const Main = () => {
     <div id="main">
       <Navbar />
       <Posts/>
-      {/* <SinglePost/> */}
+      
       <Register />
+    
+      <Login/>
     </div>
   );
 };
