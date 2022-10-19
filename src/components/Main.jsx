@@ -8,7 +8,8 @@ const Main = () => {
   return (
     <div id="main">
       <Navbar />
-      <Posts />
+      <Posts/>
+      {/* <SinglePost/> */}
       <Register />
     </div>
   );
