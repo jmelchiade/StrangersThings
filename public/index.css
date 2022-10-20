@@ -3,9 +3,22 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  
+  background-color: black;
+}
+#picture {
+  height: 80px;
+  width: auto;
+}
+p {
+  margin-left: 20px;
 }
 
+h1 {
+  color: white;
+}
+.box {
+  color: white;
+}
 #navLogin {
   text-decoration: none;
   border: 2px solid white;
@@ -41,18 +54,25 @@ body {
   text-align: center;
 
 }
-
+#createBtn {
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+  height: 25px;
+}
 
 #navbar {
   font-family: 'Poller One', Arial, sans-serif;
   flex-grow: 1;
-  max-height: 10%;
-  min-height: 40px;
-  background-color: black;
+  background-color: rgb(128, 8, 8);
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  height: 77px;
+  width: 100%;
 }
 
 #navbar div {
@@ -60,7 +80,7 @@ body {
 }
 
 #post {
-  border: 2px solid black;
+  border: 2px solid rgb(128, 8, 8);
   display:flex;
   flex-direction: column;
   margin-left: 20px;
@@ -70,11 +90,13 @@ body {
 .regForm {
   display: flex;
   justify-content: center;
+  color: white;
 }
 
 .loginForm{
   display:flex;
   justify-content: center;
+  color: white;
 }
 
 #username{

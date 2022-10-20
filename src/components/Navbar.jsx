@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div id="navbar">
-      <h1>insert logo or img </h1>
+      <div><img src="https://i.pinimg.com/originals/b0/81/48/b08148b16c37f13fc7fb43d5a8aea45e.jpg" alt="Dustin Henderson" id="picture"></img></div>
       <NavLink id="navLogin" to="login">Login</NavLink>
       {/* login to be up upon page load */}
       <NavLink id="navReg" to="register">Register</NavLink>
@@ -14,9 +14,6 @@ const Navbar = () => {
       <NavLink id="navPosts" to="posts">Posts</NavLink>
       <NavLink id="navProfile" to="profile">Profile</NavLink>
       {/* set to show only after successfully logged in */}
-
-      {/* <Login />
-      <Register /> */}
     </div>
   );
 };

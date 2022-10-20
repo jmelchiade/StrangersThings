@@ -4,7 +4,7 @@ const SinglePost = (props) => {
   const posts = props.posts;
   return (
     <div className="box">
-      {`This is your Posts Component`}
+      <button id="createBtn">Create New Post</button>
       {posts.length ? (
         posts.map((post) => {
           console.log(post);
@@ -12,23 +12,23 @@ const SinglePost = (props) => {
             <div key={`posts-${post._id}`}>
               <div id="post">
                 <p>
-                  <b>Title:</b>
+                  <b>Title: </b>
                   {post.title}
                 </p>
                 <p>
-                  <b>Author:</b>
+                  <b>Author: </b>
                   {post.author.username}
                 </p>
                 <p>
-                  <b>Description:</b>
+                  <b>Description: </b>
                   {post.description}
                 </p>
                 <p>
-                  <b>Location:</b>
+                  <b>Location: </b>
                   {post.location}
                 </p>
                 <p>
-                  <b>Price:</b>
+                  <b>Price: </b>
                   {post.price}
                 </p>
               </div>
