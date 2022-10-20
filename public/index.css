@@ -80,6 +80,8 @@ h1 {
   justify-content: space-around;
   height: 77px;
   width: 100%;
+  padding: 5px;
+  margin-top: 10px;
 }
 
 #navbar div {
@@ -142,7 +144,7 @@ h1{
 
 .st {
   width: 850px;
-  margin: 6rem auto 3rem auto;
+  margin: 2rem auto -50px auto;
   text-align: center;
   text-transform: uppercase;
   font-size: 8rem;
