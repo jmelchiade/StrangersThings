@@ -19,6 +19,9 @@ h1 {
 .box {
   color: white;
 }
+.searchBtn {
+  cursor: pointer;
+}
 #navLogin {
   text-decoration: none;
   border: 2px solid white;
@@ -26,6 +29,10 @@ h1 {
   height: 30px;
   width: 100px;
   text-align: center;
+}
+#navLogin:hover, #navReg:hover, #navPosts:hover, #navProfile:hover {
+  cursor: pointer;
+  background-color: rgb(13, 13, 146);
 }
 #navReg {
   text-decoration: none;
