@@ -4,7 +4,6 @@ const SinglePost = (props) => {
   const posts = props.posts;
   return (
     <div className="box">
-      <button id="createBtn">Create New Post</button>
       {posts.length ? (
         posts.map((post) => {
           console.log(post);

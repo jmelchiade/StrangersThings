@@ -60,13 +60,13 @@ const PostDetails = (props) => {
           </Link>
               </div>
               <div className="box">
-                  <form onChange={handleChange} onSubmit={handleSubmit}>
+                  {/* <form onChange={handleChange} onSubmit={handleSubmit}>
                       <input id='title'defaultValue={formDetails.title}/>
                       <input id='description'defaultValue={formDetails.description}/>
                       <input id='price'defaultValue={formDetails.price}/>
                       <input id='location' defaultValue={formDetails.location} />
                       <button type='submit'>Submit</button>
-                </form>
+                </form> */}
                   <button id={post._id ? `${post._id}` : null} onClick={(e) => { handleDelete(e) }}>Delete Post</button>
               </div>
           </>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { CreateNewPost } from "./";
 
 
 const Profile = (props) => {
@@ -11,7 +12,12 @@ const Profile = (props) => {
     })
 
 return(
-    <h2 id="profileTxt">This is the Profile Component</h2>
+    <div>
+        <h2 id="profileTxt">This is the Profile Component</h2>
+        <CreateNewPost />
+
+
+    </div>
 )
 }
 
