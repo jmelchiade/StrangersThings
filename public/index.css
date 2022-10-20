@@ -31,12 +31,14 @@ body {
   margin-right: 20px;
   margin-bottom: 5px;
 }
-
+.regForm {
+  display: flex;
+  justify-content: center;
+}
 
 .loginForm{
   display:flex;
   justify-content: center;
-
 }
 
 #username{
@@ -56,7 +58,7 @@ h1{
   justify-content: center;
 }
 
-#logInBtn{
+#logInBtn, #subBtn {
   display: flex;
   justify-content: center;
   width: 147px;
@@ -66,7 +68,7 @@ h1{
   align-items:center;
 }
 
-#logInBtn:hover{
+#logInBtn:hover, #subBtn:hover{
   cursor: pointer;
   background-color: silver;
   color: blue;
