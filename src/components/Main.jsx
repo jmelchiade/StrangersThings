@@ -5,6 +5,7 @@ import Register from "./Register";
 import Login from "./Login";
 import Profile from "./Profile"
 import { Routes, Route } from "react-router-dom";
+import Logo from "./Logo";
 
 
 const Main = () => {
@@ -20,7 +21,7 @@ const Main = () => {
   return (
     <div id="main">
       <Navbar />
-      {/* <Login/> */}
+      <Logo />
       <Routes>
         <Route path="register" element={<Register />} />
         <Route path="posts" element={<Posts />} />
