@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 
-const Profile = () => {
+const Profile = (props) => {
+    const [userPosts, setAllUserPosts] = useState([])
+    useEffect(() => {
+        async function fetchUserPosts(){
+            const allUserPosts = await getUserInfo(token);
+            setAllUserPosts(allUserPosts)
+        }
+    })
 
 return(
-    <h2>This is the Profile Component</h2>
+    <h2 id="profileTxt">This is the Profile Component</h2>
 )
 }
 

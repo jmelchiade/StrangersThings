@@ -2,33 +2,33 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div class="st">
-      <div class="st-top">
-        <div class="st-bound st-bound-full"></div>
+    <div className="st">
+      <div className="st-top">
+        <div className="st-bound st-bound-full"></div>
         <p>
-          <span class="st-drop st-stranger-s">S</span>
-          <span class="st-stranger-t">t</span>
-          <span class="st-stranger-r">r</span>
-          <span class="st-stranger-a">a</span>
-          <span class="st-stranger-n">n</span>
-          <span class="st-stranger-g">g</span>
-          <span class="st-stranger-e">e</span>
-          <span class="st-stranger-r-2">r'</span>
-          <span class="st-stranger-space"> </span>
-          <span class="st-stranger-s-2">s</span>
+          <span className="st-drop st-stranger-s">S</span>
+          <span className="st-stranger-t">t</span>
+          <span className="st-stranger-r">r</span>
+          <span className="st-stranger-a">a</span>
+          <span className="st-stranger-n">n</span>
+          <span className="st-stranger-g">g</span>
+          <span className="st-stranger-e">e</span>
+          <span className="st-stranger-r-2">r'</span>
+          <span className="st-stranger-space"> </span>
+          <span className="st-stranger-s-2">s</span>
         </p>
-        <div class="st-bound st-bound-mini st-bound-left"></div>
-        <div class="st-bound st-bound-mini st-bound-right"></div>
+        <div className="st-bound st-bound-mini st-bound-left"></div>
+        <div className="st-bound st-bound-mini st-bound-right"></div>
       </div>
 
-      <div class="st-bottom">
+      <div className="st-bottom">
         <p>
-          <span class="st-things-t">T</span>
-          <span class="st-things-h">h</span>
-          <span class="st-things-i">i</span>
-          <span class="st-things-n">n</span>
-          <span class="st-things-g">g</span>
-          <span class="st-things-s">s</span>
+          <span className="st-things-t">T</span>
+          <span className="st-things-h">h</span>
+          <span className="st-things-i">i</span>
+          <span className="st-things-n">n</span>
+          <span className="st-things-g">g</span>
+          <span className="st-things-s">s</span>
         </p>
       </div>
     </div>
