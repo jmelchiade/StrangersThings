@@ -7,12 +7,12 @@ const Navbar = () => {
   return (
     <div id="navbar">
       <h1>insert logo or img </h1>
-      <NavLink to="login">Login</NavLink>
+      <NavLink id="navLogin" to="login">Login</NavLink>
       {/* login to be up upon page load */}
-      <NavLink to="register">Register</NavLink>
+      <NavLink id="navReg" to="register">Register</NavLink>
       {/* set to only show after selected to "Create account" with a link */}
-      <NavLink to="posts">Posts</NavLink>
-      <NavLink to="posts">Profile</NavLink>
+      <NavLink id="navPosts" to="posts">Posts</NavLink>
+      <NavLink id="navProfile" to="profile">Profile</NavLink>
       {/* set to show only after successfully logged in */}
 
       {/* <Login />
