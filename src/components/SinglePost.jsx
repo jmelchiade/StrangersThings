@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SinglePost = (props) => {
   const posts = props.posts;
@@ -31,6 +32,9 @@ const SinglePost = (props) => {
                   {post.price}
                 </p>
               </div>
+              <Link to={`details/${post._id}`}>
+                <button>See Details</button>
+              </Link>
             </div>
           );
         })

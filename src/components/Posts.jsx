@@ -3,18 +3,14 @@ import { getPosts } from "../api";
 import SinglePost from "./SinglePost";
 
 const Posts = (props) => {
-  const [posts, setAllPosts] = useState([]);
-  useEffect(() => {
-    async function fetchPosts() {
-      const allPosts = await getPosts();
-      setAllPosts(allPosts);
-    }
-    fetchPosts();
-  }, []);
-
+  const posts = props.posts;
   return (
     <div>
-      <h1>Search Posts:<input type="text" onChange={e => setQuery(e.target.value)}/><button className="searchBtn"> Search </button></h1>
+      <h1>
+        Search Posts:
+        <input type="text" onChange={(e) => setQuery(e.target.value)} />
+        <button className="searchBtn"> Search </button>
+      </h1>
       <SinglePost posts={posts} />{" "}
     </div>
   );

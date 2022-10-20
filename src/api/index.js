@@ -46,22 +46,16 @@ export async function registerUser(username, password) {
   return result.data;
 }
 
-export async function getUserInfo(token, func) {
+export async function getUserInfo(token) {
     console.log(token)
-  fetch(`${BASE_URL}/api/${COHORT}/users/me`, {
+  const response = await fetch(`${BASE_URL}/api/${COHORT}/users/me`, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  })
-    .then((response) => response.json())
-    .then((result) => {
-        console.log(result);
-        func(result.data)
-      return result.data;
-    })
-
-    .catch(console.error);
+}) 
+const result = await response.json()
+return result.data
 }
 
 export async function updatePost(post, id, token) {
