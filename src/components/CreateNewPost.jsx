@@ -1,37 +1,33 @@
 import React, { useState } from "react";
-import  {createNewPost} from '../api'
+import { createNewPost } from "../api";
+
 const CreateNewPost = (props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
-  const [willDeliver, setWillDeliver] = useState("");
+  const [willDeliver, setWillDeliver] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const post = {title, description, price, location, willDeliver}
-    const token = localStorage.getItem('token')
-    const newlyCreatedPost = createNewPost(post, token)
-    console.log(newlyCreatedPost)
+    const post = { title, description, price, location, willDeliver };
+    const token = localStorage.getItem("token");
+    const newlyCreatedPost = await createNewPost(post, token);
+    console.log(newlyCreatedPost);
   }
   function handleTitleChange(e) {
-    console.log(e.target.value);
     setTitle(e.target.value);
   }
   function handleDescriptionChange(e) {
-    console.log(e.target.value);
     setDescription(e.target.value);
   }
   function handlePriceChange(e) {
-    console.log(e.target.value);
     setPrice(e.target.value);
   }
   function handleLocationChange(e) {
-    console.log(e.target.value);
     setLocation(e.target.value);
   }
   function handleWillDeliverChange(e) {
-    console.log(e.target.value);
     setWillDeliver(e.target.value);
   }
 
