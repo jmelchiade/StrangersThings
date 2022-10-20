@@ -42,6 +42,32 @@ export async function getUserInfo(token){
 
 } 
 
+export async function updatePost(post, id, token) {
+    const options = {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }, body: JSON.stringify({
+            post
+        })
+    }
+    const response = await fetch(`${BASE_URL}/api/${COHORT}/posts/${id}`, options)
+    const result = await response.json()
+    return result
+}
+export async function deletePost(id, token) {
+    const options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    }
+    const response = await fetch(`${BASE_URL}/api/${COHORT}/posts/${id}`, options)
+    const result = await response.json()
+    return result
+}
 export async function loginUser(username, password) {
     const options = {
         method: 'POST',

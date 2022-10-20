@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Navbar } from "./";
+import { Navbar, PostDetails } from "./";
 import Posts from "./Posts";
 import Register from "./Register";
 import Login from "./Login";
 import Profile from "./Profile"
 import { Routes, Route } from "react-router-dom";
 import Logo from "./Logo";
+
 
 
 const Main = () => {
@@ -24,7 +25,9 @@ const Main = () => {
       <Logo />
       <Routes>
         <Route path="register" element={<Register />} />
-        <Route path="posts" element={<Posts />} />
+        <Route path="posts" element={<Posts />}>
+        <Route path="details/:id" element={<PostDetails/>}></Route>
+      </Route>
         <Route path="login" element={<Login />} />
         <Route path="profile" element={<Profile />} />
       </Routes>
