@@ -1,6 +1,23 @@
 const BASE_URL = 'https://strangers-things.herokuapp.com'
 const COHORT = '2209-FTB-ET-WEB-FT'
 
+
+export async function createNewPost (post, token) {
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }, body: JSON.stringify({
+            post
+        })
+    }
+    const response = await fetch(`${BASE_URL}/api/${COHORT}/users/register`, options)
+    const result = await response.json()
+    return result.data
+}
+
 export async function getPosts() {
     const response = await fetch(`${BASE_URL}/api/${COHORT}/posts`)
     const result = await response.json()

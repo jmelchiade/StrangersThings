@@ -5,6 +5,11 @@ body {
   margin: 0;
   background-color: black;
 }
+label {
+  color: white;
+  display: flex;
+  margin-left: 20px;
+}
 #picture {
   height: 80px;
   width: auto;

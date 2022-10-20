@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import  {createNewPost} from '../api'
 const CreateNewPost = (props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -7,12 +7,12 @@ const CreateNewPost = (props) => {
   const [location, setLocation] = useState("");
   const [willDeliver, setWillDeliver] = useState("");
 
-
-
-
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("submit");
+    const post = {title, description, price, location, willDeliver}
+    const token = localStorage.getItem('token')
+    const newlyCreatedPost = createNewPost(post, token)
+    console.log(newlyCreatedPost)
   }
   function handleTitleChange(e) {
     console.log(e.target.value);
@@ -39,12 +39,16 @@ const CreateNewPost = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        title:
+        Title:
         <input id="title" onChange={handleTitleChange} defaultValue={title} />
       </label>
       <label>
         Description:
-        <input id="description" onChange={handleDescriptionChange} defaultValue={description} />
+        <input
+          id="description"
+          onChange={handleDescriptionChange}
+          defaultValue={description}
+        />
       </label>
       <label>
         Price:
@@ -52,11 +56,19 @@ const CreateNewPost = (props) => {
       </label>
       <label>
         Location:
-        <input id="location" onChange={handleLocationChange} defaultValue={location} />
+        <input
+          id="location"
+          onChange={handleLocationChange}
+          defaultValue={location}
+        />
       </label>
       <label>
         Will Deliver:
-        <input id="willDeliver" onChange={handleWillDeliverChange} defaultValue={willDeliver} />
+        <input
+          id="willDeliver"
+          onChange={handleWillDeliverChange}
+          defaultValue={willDeliver}
+        />
       </label>
       {/* <input id="description" defaultValue={formDetails.description} />
       <input id="price" defaultValue={formDetails.price} />
