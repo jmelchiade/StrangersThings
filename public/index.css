@@ -23,42 +23,57 @@ h1 {
   cursor: pointer;
 }
 #navLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   border: 2px solid white;
+  border-radius: 21px;
   color: white;
   height: 30px;
   width: 100px;
-  text-align: center;
+ 
 }
 #navLogin:hover, #navReg:hover, #navPosts:hover, #navProfile:hover {
   cursor: pointer;
   background-color: rgb(13, 13, 146);
 }
 #navReg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
+  border-radius: 21px;
   border: 2px solid white;
   color: white;
   height: 30px;
   width: 100px;
-  text-align: center;
+  
 
 }
 #navPosts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 21px;
   text-decoration: none;
   border: 2px solid white;
   color: white;
   height: 30px;
   width: 100px;
-  text-align: center;
+  
 
 }
 #navProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   border: 2px solid white;
+  border-radius: 21px;
   color: white;
   height: 30px;
   width: 100px;
-  text-align: center;
 
 }
 #createBtn {
