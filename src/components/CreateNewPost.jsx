@@ -6,15 +6,17 @@ const CreateNewPost = (props) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
-  const [willDeliver, setWillDeliver] = useState(null);
+  const [willDeliver, setWillDeliver] = useState(false);
   // line 9 had a useState defined as false
-
+  const { allUserPosts, setAllUserPosts } = props;
+  console.log(allUserPosts);
   async function handleSubmit(e) {
     e.preventDefault();
     const post = { title, description, price, location, willDeliver };
     const token = localStorage.getItem("token");
     const newlyCreatedPost = await createNewPost(post, token);
-    console.log(newlyCreatedPost);
+    console.log("THIS IS THE BEST COMMENT EVER", newlyCreatedPost);
+    setAllUserPosts([...allUserPosts, newlyCreatedPost.post]);
   }
   function handleTitleChange(e) {
     setTitle(e.target.value);
