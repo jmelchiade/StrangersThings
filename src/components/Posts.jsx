@@ -5,7 +5,11 @@ import SinglePost from "./SinglePost";
 
 
 const Posts = (props) => {
+  const [query, setQuery] = useState("")
   const posts = props.posts;
+  const onSearch=() => {
+    posts.filter((post) => post.id === val)
+  }
   return (
     <div>
       <h1>

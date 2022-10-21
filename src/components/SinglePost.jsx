@@ -2,11 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SinglePost = (props) => {
+
+
   const posts = props.posts.sort((a,b) => { 
     let date1 = new Date(a.createdAt) 
     let date2 = new Date(b.createdAt) 
     return date2.getTime() - date1.getTime()
   })
+
+  
   return (
     <div className="box">
       {posts.length ? (
