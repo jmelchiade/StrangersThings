@@ -3,10 +3,10 @@ import { CreateNewPost } from "./";
 import { getUserInfo, deletePost } from "../api";
 
 const Profile = (props) => {
-  const setAllPosts = props.setAllPosts
-  const posts=props.posts
+  const setAllPosts = props.setAllPosts;
+  const posts = props.posts;
   const [allUserPosts, setAllUserPosts] = useState({ posts: [] });
-  // const [allUserMessages, setAllUserMessages] = useState({messages:[]})
+  const [allUserMessages, setAllUserMessages] = useState({ messages: [] });
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -23,21 +23,21 @@ const Profile = (props) => {
     const toDelete = e.target.id;
     const token = localStorage.getItem("token");
     const deleted = await deletePost(toDelete, token);
-    const userPostArray = allUserPosts.filter(post => post._id != toDelete)
-    setAllUserPosts(userPostArray)
+    const userPostArray = allUserPosts.filter((post) => post._id != toDelete);
+    setAllUserPosts(userPostArray);
 
-    const postArrayMinusDeletedPost = posts.filter(post => post._id != toDelete)
- setAllPosts(postArrayMinusDeletedPost)
+    const postArrayMinusDeletedPost = posts.filter(
+      (post) => post._id != toDelete
+    );
+    setAllPosts(postArrayMinusDeletedPost);
   }
+
+  // async function handleEdit(e) {
+
+  // }
+
   // create useEffect for messages/ revise async function in index api
-  // useEffect(() => {
-  //     const token = localStorage.getItem('token')
-  //     async function fetchUserMessages(){
-  //         const userPosts = await getUserInfo(token);
-  //         console.log(userPosts)
-  //         setAllUserPosts(userPosts)
-  //     } fetchUserPosts()
-  // },[])
+  // useEffect(() => {}
 
   // Need to create another map for messages such as allUserMessages.posts.messages.map(())
   console.log("all user posts", allUserPosts);
@@ -50,57 +50,75 @@ const Profile = (props) => {
       />
       {allUserPosts.length
         ? allUserPosts.map((post) => {
-          if (post.active) {
-            return (
-              <div key={`posts-${post._id}`}>
-                <div id="post">
-                  <p>
-                    <b>Title: </b>
-                    {post.title}
-                  </p>
-                  {post.author ? (
+            console.log(post);
+            if (post.active) {
+              return (
+                <div key={`posts-${post._id}`}>
+                  <div id="post">
                     <p>
-                      <b>Author: </b>
-                      {post.author.username}
+                      <b>Title: </b>
+                      {post.title}
                     </p>
-                  ) : null}
-                  <p>
-                    <b>Description: </b>
-                    {post.description}
-                  </p>
-                  <p>
-                    <b>Location: </b>
-                    {post.location}
-                  </p>
-                  <p>
-                    <b>Price: </b>
-                    {post.price}
-                  </p>
-                </div>
-                <button
-                  id={post._id ? `${post._id}` : null}
-                  onClick={(e) => {
-                    handleDelete(e);
-                  }}
-                >
-                  Delete Post
-                </button>
-                {/* <span>
+                    {post.author ? (
+                      <p>
+                        <b>Author: </b>
+                        {post.author.username}
+                      </p>
+                    ) : null}
+                    <p>
+                      <b>Description: </b>
+                      {post.description}
+                    </p>
+                    <p>
+                      <b>Location: </b>
+                      {post.location}
+                    </p>
+                    <p>
+                      <b>Price: </b>
+                      {post.price}
+                    </p>
+                  </div>
+                  <div>
+                    {post.messages.length
+                      ? post.messages.map((message) => {
+                          return <p key= {message._id}>{message.content}</p>;
+                        })
+                      : null}
+                  </div>
                   <button
                     id={post._id ? `${post._id}` : null}
                     onClick={(e) => {
                       handleDelete(e);
                     }}
                   >
-                    Edit Post
+                    Delete Post
                   </button>
-                </span> */}
-              </div>
-            );
-          } else {
-            return null;
-          }
-        })
+                  <span>
+                    <button
+                      id={post._id ? `${post._id}` : null}
+                      onClick={(e) => {
+                        handleEdit(e);
+                      }}
+                    >
+                      {/* {allUserMessages.length
+        ? allUserMessages.map((post) => {
+          if (post.active) {
+            return (
+              <div key={`messages-${messages._id}`}>
+                <div id="messages">
+                  <p>
+                    <b>_id: </b>
+                    {messages.title}
+                  </p> */}
+                      Edit Post
+                    </button>
+                  </span>
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })
         : null}
     </div>
   );
