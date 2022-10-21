@@ -37,7 +37,7 @@ const PostDetails = (props) => {
     const toDelete = e.target.id;
     const token = localStorage.getItem("token");
     const deleted = await deletePost(toDelete, token);
-    console.log(deleted);
+    return deleted;
   }
   async function handleSubmit(e) {
     e.preventDefault();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CreateNewPost } from "./";
-import { getUserInfo } from "../api";
+import { getUserInfo, deletePost } from "../api";
 
 const Profile = (props) => {
   const [allUserPosts, setAllUserPosts] = useState({ posts: [] });
@@ -16,6 +16,13 @@ const Profile = (props) => {
     fetchUserPosts();
   }, []);
 
+  async function handleDelete(e) {
+    e.preventDefault();
+    const toDelete = e.target.id;
+    const token = localStorage.getItem("token");
+    const deleted = await deletePost(toDelete, token);
+    console.log(deleted);
+  }
   // create useEffect for messages/ revise async function in index api
   // useEffect(() => {
   //     const token = localStorage.getItem('token')
@@ -37,57 +44,56 @@ const Profile = (props) => {
       />
       {allUserPosts.length
         ? allUserPosts.map((post) => {
-          if (post.active){
-
-          
-            return (
-              <div key={`posts-${post._id}`}>
-                <div id="post">
-                  <p>
-                    <b>Title: </b>
-                    {post.title}
-                  </p>
-                  {post.author ? (
+            if (post.active) {
+              return (
+                <div key={`posts-${post._id}`}>
+                  <div id="post">
                     <p>
-                      <b>Author: </b>
-                      {post.author.username}
+                      <b>Title: </b>
+                      {post.title}
                     </p>
-                  ) : null}
-                  <p>
-                    <b>Description: </b>
-                    {post.description}
-                  </p>
-                  <p>
-                    <b>Location: </b>
-                    {post.location}
-                  </p>
-                  <p>
-                    <b>Price: </b>
-                    {post.price}
-                  </p>
-                </div>
-                <button
-                  id={post._id ? `${post._id}` : null}
-                  onClick={(e) => {
-                    handleDelete(e);
-                  }}
-                >
-                  Delete Post
-                </button>
-                <span>
+                    {post.author ? (
+                      <p>
+                        <b>Author: </b>
+                        {post.author.username}
+                      </p>
+                    ) : null}
+                    <p>
+                      <b>Description: </b>
+                      {post.description}
+                    </p>
+                    <p>
+                      <b>Location: </b>
+                      {post.location}
+                    </p>
+                    <p>
+                      <b>Price: </b>
+                      {post.price}
+                    </p>
+                  </div>
                   <button
                     id={post._id ? `${post._id}` : null}
                     onClick={(e) => {
                       handleDelete(e);
                     }}
                   >
-                    Edit Post
+                    Delete Post
                   </button>
-                </span>
-              </div>
-            )} else{
-              return null
-            };
+                  <span>
+                    <button
+                      id={post._id ? `${post._id}` : null}
+                      onClick={(e) => {
+                        handleDelete(e);
+                      }}
+                    >
+                      Edit Post
+                    </button>
+                  </span>
+                </div>
+              );
+            } else {
+              return null;
+            }
           })
         : null}
     </div>

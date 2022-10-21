@@ -133,7 +133,7 @@ h1 {
 .loginForm{
   display:flex;
   justify-content: center;
-  color: white;
+  /* color: white; */
 }
 
 #username{
