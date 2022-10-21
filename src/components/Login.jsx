@@ -12,6 +12,7 @@ const Login = (props) => {
         const password = event.target[1].value
         const loggedInUser = await loginUser(username, password)
         const token = loggedInUser.token
+        props.SetLogin(true)
         localStorage.removeItem('token')
         localStorage.setItem('token', token)
         navigate('/profile')

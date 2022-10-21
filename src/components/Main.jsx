@@ -11,7 +11,7 @@ import { getPosts } from "../api";
 
 
 const Main = () => {
-  // const [islogin, SetLogin] = useState(false)
+  const [isLogin, SetLogin] = useState(false)
 
   const [posts, setAllPosts] = useState([]);
   useEffect(() => {
@@ -28,10 +28,10 @@ const Main = () => {
   }
   return (
     <div id="main">
-      <Navbar />
+      <Navbar isLogin={isLogin} SetLogin={SetLogin}/>
       <Logo />
       <Routes>
-        <Route path="register" element={<Register />} />
+        <Route path="register" element={<Register SetLogin={SetLogin} />} />
         <Route path="posts">
           <Route
             path="details/:id"
@@ -39,7 +39,7 @@ const Main = () => {
           ></Route>
           <Route path="" element={<Posts posts={posts} />} />
         </Route>
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<Login isLogin={isLogin} SetLogin={SetLogin}/>} />
         <Route path="profile" element={<Profile setAllPosts={setAllPosts} posts={posts}/>} />
       </Routes>
     </div>
