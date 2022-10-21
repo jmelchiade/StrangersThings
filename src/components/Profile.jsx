@@ -30,6 +30,8 @@ const Profile = (props) => {
 console.log('all user posts',allUserPosts)
 return(
     <div>
+      <h2 id="profileTxt">Welcome Back, "INSERT_USERNAME" </h2>
+      <CreateNewPost/>
          {allUserPosts.posts.length ? (
         allUserPosts.posts.map((post) => {
             return (
@@ -72,14 +74,9 @@ return(
             >
               Edit Post
             </button></span>
-            
                 </div>
               ); 
         })): null }
-
-        <h2 id="profileTxt">This is the Profile Component</h2>
-        <CreateNewPost />
-
 
     </div>
 )

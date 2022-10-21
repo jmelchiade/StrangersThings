@@ -6,7 +6,8 @@ const CreateNewPost = (props) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
-  const [willDeliver, setWillDeliver] = useState(false);
+  const [willDeliver, setWillDeliver] = useState(null);
+  // line 9 had a useState defined as false
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -33,7 +34,7 @@ const CreateNewPost = (props) => {
 
   console.log(title);
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="addPost" onSubmit={handleSubmit}>
       <label>
         Title:
         <input id="title" onChange={handleTitleChange} defaultValue={title} />
@@ -69,7 +70,7 @@ const CreateNewPost = (props) => {
       {/* <input id="description" defaultValue={formDetails.description} />
       <input id="price" defaultValue={formDetails.price} />
       <input id="location" defaultValue={formDetails.location} /> */}
-      <button type="submit">Submit</button>
+      <button type="submit">Add New Post</button>
     </form>
   );
 };

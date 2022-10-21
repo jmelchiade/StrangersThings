@@ -71,14 +71,14 @@ const PostDetails = (props) => {
                       <input id='location' defaultValue={formDetails.location} />
                       <button type='submit'>Submit</button>
                 </form> */}
-            <button
+            {/* <button
               id={post._id ? `${post._id}` : null}
               onClick={(e) => {
                 handleDelete(e);
               }}
             >
               Delete Post
-            </button>
+            </button> */}
           </div>
         </>
       ) : (

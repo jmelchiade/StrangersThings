@@ -170,8 +170,16 @@ h1{
   color: blue;
 }
 
-#profileTxt{
+/* #profileTxt{
   color: white;
+} */
+
+#addPost{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 21px;
 }
 
 
