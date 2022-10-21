@@ -155,12 +155,13 @@ h1{
 
 #logInBtn, #subBtn {
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 147px;
   background-color: white;
   color: red;
   font-family: fantasy;
-  align-items:center;
+ 
 }
 
 #logInBtn:hover, #subBtn:hover{

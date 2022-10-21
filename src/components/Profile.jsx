@@ -56,6 +56,23 @@ return(
                       {post.price}
                     </p>
                   </div>
+                  <button
+              id={post._id ? `${post._id}` : null}
+              onClick={(e) => {
+                handleDelete(e);
+              }}
+            >
+              Delete Post
+            </button>
+            <span><button
+              id={post._id ? `${post._id}` : null}
+              onClick={(e) => {
+                handleDelete(e);
+              }}
+            >
+              Edit Post
+            </button></span>
+            
                 </div>
               ); 
         })): null }
