@@ -7,6 +7,9 @@ import Profile from "./Profile";
 import { Routes, Route } from "react-router-dom";
 import Logo from "./Logo";
 import { getPosts } from "../api";
+
+
+
 const Main = () => {
   // const [islogin, SetLogin] = useState(false)
 

@@ -65,13 +65,7 @@ const PostDetails = (props) => {
           </div>
           <div className="box">
             {/* instead of a form here we could just have another component */}
-            <form onChange={handleChange} onSubmit={handleSubmit}>
-              <input id="title" defaultValue={formDetails.title} />
-              <input id="description" defaultValue={formDetails.description} />
-              <input id="price" defaultValue={formDetails.price} />
-              <input id="location" defaultValue={formDetails.location} />
-              <button type="submit">Submit</button>
-            </form>
+            
             {/* <button
               id={post._id ? `${post._id}` : null}
               onClick={(e) => {

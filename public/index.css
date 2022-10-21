@@ -127,7 +127,7 @@ h1 {
 .regForm {
   display: flex;
   justify-content: center;
-  color: white;
+  /* color: white; */
 }
 
 .loginForm{
@@ -170,9 +170,11 @@ h1{
   color: blue;
 }
 
-/* #profileTxt{
-  color: white;
-} */
+#profileTxt{
+  /* color: white; */
+  display: flex;
+  justify-content: center;
+}
 
 #addPost{
   display: flex;
@@ -207,13 +209,13 @@ h1{
   margin: 0;
 }
 
-.st-bound {
-  /* box-shadow: -0.05rem -0.05rem 2px #ed2b12,
+/* .st-bound {
+  box-shadow: -0.05rem -0.05rem 2px #ed2b12,
     15rem -0.05rem 2px #ed2b12,
     -0.05rem 0.05rem 2px #ed2b12,
-    0.05rem 0.05rem 2px #ed2b12; */
+    0.05rem 0.05rem 2px #ed2b12;
   height: 5px;
-}
+} */
 
 .st-bound-full {
   width: 100%;
@@ -277,6 +279,7 @@ h1{
 }
 
 .st-stranger-s-2 {
+  font-size: 10.5rem;
   letter-spacing: 1;
   margin-left: -35px;
 }

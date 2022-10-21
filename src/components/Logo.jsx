@@ -15,7 +15,7 @@ const Logo = () => {
           <span className="st-stranger-e">e</span>
           <span className="st-stranger-r-2">r'</span>
           <span className="st-stranger-space"> </span>
-          <span className="st-stranger-s-2">s</span>
+          <span className="st-drop st-stranger-s-2">s</span>
         </p>
         <div className="st-bound st-bound-mini st-bound-left"></div>
         <div className="st-bound st-bound-mini st-bound-right"></div>

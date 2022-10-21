@@ -22,6 +22,7 @@ const Profile = (props) => {
     const token = localStorage.getItem("token");
     const deleted = await deletePost(toDelete, token);
     console.log(deleted);
+    await fetchUserPosts();
   }
   // create useEffect for messages/ revise async function in index api
   // useEffect(() => {
