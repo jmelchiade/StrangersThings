@@ -78,13 +78,6 @@ const Profile = (props) => {
                       {post.price}
                     </p>
                   </div>
-                  <div>
-                    {post.messages.length
-                      ? post.messages.map((message) => {
-                          return <p key= {message._id}>{message.content}</p>;
-                        })
-                      : null}
-                  </div>
                   <button
                     id={post._id ? `${post._id}` : null}
                     onClick={(e) => {
@@ -100,19 +93,18 @@ const Profile = (props) => {
                         handleEdit(e);
                       }}
                     >
-                      {/* {allUserMessages.length
-        ? allUserMessages.map((post) => {
-          if (post.active) {
-            return (
-              <div key={`messages-${messages._id}`}>
-                <div id="messages">
-                  <p>
-                    <b>_id: </b>
-                    {messages.title}
-                  </p> */}
+                
                       Edit Post
                     </button>
                   </span>
+                  <div>
+                    {post.messages.length
+                      ? post.messages.map((message) => {
+                          return <p id="userMessages" key= {message._id}>{message.content}</p>;
+                        })
+                      : null}
+                  </div>
+                  
                 </div>
               );
             } else {

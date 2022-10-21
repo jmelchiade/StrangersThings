@@ -118,12 +118,23 @@ h1 {
 
 #post {
   border: 2px solid rgb(128, 8, 8);
-  display:flex;
+  display:grid;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+
+}
+
+#userMessages{
+  border: 2px solid rgb(128, 8, 8);
+  display:grid;
   flex-direction: column;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 5px;
 }
+
 .regForm {
   display: flex;
   justify-content: center;
