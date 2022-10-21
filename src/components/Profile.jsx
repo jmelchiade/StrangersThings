@@ -5,6 +5,8 @@ import { getUserInfo } from "../api";
 
 const Profile = (props) => {
     const [allUserPosts, setAllUserPosts] = useState({posts:[]})
+    // const [allUserMessages, setAllUserMessages] = useState({messages:[]})
+
     useEffect(() => {
         const token = localStorage.getItem('token')
         async function fetchUserPosts(){
@@ -13,6 +15,18 @@ const Profile = (props) => {
             setAllUserPosts(userPosts)
         } fetchUserPosts()
     },[])
+
+    // create useEffect for messages/ revise async function in index api
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token')
+    //     async function fetchUserMessages(){
+    //         const userPosts = await getUserInfo(token);
+    //         console.log(userPosts)
+    //         setAllUserPosts(userPosts)
+    //     } fetchUserPosts()
+    // },[])
+
+    // Need to create another map for messages such as allUserMessages.posts.messages.map(())
 console.log('all user posts',allUserPosts)
 return(
     <div>

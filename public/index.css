@@ -3,10 +3,10 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  background-color: black;
+  /* background-color: black; */
 }
 label {
-  color: white;
+  /* color: white; */
   display: flex;
   margin-left: 20px;
 }
@@ -14,12 +14,20 @@ label {
   height: 80px;
   width: auto;
 }
+
+div{
+  color: black;
+}
+
+b{
+  color: black;
+}
 p {
   margin-left: 20px;
 }
 
 h1 {
-  color: white;
+  color: black;
 }
 .box {
   color: white;

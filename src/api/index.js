@@ -24,6 +24,13 @@ export async function getPosts() {
   const posts = result.data.posts;
   return posts;
 }
+// Created fetch component for user messages - revise with api docs
+// async function getMessages() {
+//     const response = await fetch(`${BASE_URL}/api/${COHORT}/`);
+//     const result = await response.json();
+//     const messages = result.data.posts.messages;
+//     return messages;
+//   }
 
 export async function registerUser(username, password) {
   const options = {

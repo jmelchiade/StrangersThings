@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { updatePost, deletePost } from "../api";
 
 const PostDetails = (props) => {
-  console.log("I am a banana");
+  console.log("I am a banana, can I not delete this right now I think it's funny");
   const { id } = useParams();
   const post = props.filterPosts(id)[0];
   const [formDetails, setFormDetails] = useState({
@@ -62,6 +62,7 @@ const PostDetails = (props) => {
             </Link>
           </div>
           <div className="box">
+
             {/* instead of a form here we could just have another component */}
             {/* <form onChange={handleChange} onSubmit={handleSubmit}>
                       <input id='title'defaultValue={formDetails.title}/>
