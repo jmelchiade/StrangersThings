@@ -40,7 +40,7 @@ const Main = () => {
           <Route path="" element={<Posts posts={posts} />} />
         </Route>
         <Route path="login" element={<Login />} />
-        <Route path="profile" element={<Profile />} />
+        <Route path="profile" element={<Profile setAllPosts={setAllPosts} posts={posts}/>} />
       </Routes>
     </div>
   );
