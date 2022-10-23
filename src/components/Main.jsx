@@ -24,7 +24,7 @@ const Main = () => {
   useEffect(()=>{
     if (localStorage.getItem("token")){
       userLogin()
-    }git
+    }
   },[]);
 
 
