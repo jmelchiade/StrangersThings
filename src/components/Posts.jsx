@@ -10,9 +10,6 @@ const [query, setQuery] = useState("")
     const filteredSearch = posts.filter((post) => post.title.toLowerCase().includes(query.toLowerCase()) )
   props.setFilteredPosts(filteredSearch)
   }
-
-
-
   return (
     <div> 
       <h1>
@@ -20,8 +17,7 @@ const [query, setQuery] = useState("")
         <input type="text" onChange={(e) => setQuery(e.target.value)} />
         <button onClick = {onSearch}className="searchBtn"> Search </button>
       </h1>
-      {/* <SearchBar /> */}
-      <SinglePost posts={posts} />{" "}
+      <SinglePost posts={posts} />
      
     </div>
   );

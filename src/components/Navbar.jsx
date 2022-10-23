@@ -37,7 +37,6 @@ const Navbar = (props) => {
           Log Out
         </button>
       ) : null}
-      {/* set to show only after successfully logged in */}
     </div>
   );
 };

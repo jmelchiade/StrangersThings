@@ -5,11 +5,11 @@ import { getUserInfo, deletePost } from "../api";
 const Profile = (props) => {
   const setAllPosts = props.setAllPosts;
   const posts = props.posts;
-  const [content, setContent] = useState("") 
   const [allUserPosts, setAllUserPosts] = useState({ posts: [] });
   const [allUserMessages, setAllUserMessages] = useState({ messages: [] });
-
-
+// const isLogin = props.isLogin
+// const messages = props.isLogin.messages
+// const username = props.isLogin.username
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -20,8 +20,6 @@ const Profile = (props) => {
     }
     fetchUserPosts();
   }, []);
-
- 
 
 
   async function handleDelete(e) {
@@ -43,6 +41,22 @@ const Profile = (props) => {
   return (
     <div>
       <h2 id="profileTxt">Welcome to Your Profile</h2>
+      {/* <div className='messages'>
+        <h3>Received Messages </h3>
+        { messages ?
+        messages.map((message) => {
+           if (message.fromUser.username != username ) return (
+           <div key={`message${message._id}`}>
+            <div>Message: {message.content}</div>
+            <div>From :{message.fromUser.username}</div>
+            <div></div> */}
+            {/* </div> */}
+            {/* );
+          }): 
+          
+          <h2>No Messages Currently</h2>}</div> 
+          <div></div> */}
+      {/* <h2 id="profileTxt">{`Welcome, ${username}`}</h2> */}
       <CreateNewPost
         allUserPosts={allUserPosts}
         setAllUserPosts={setAllUserPosts}

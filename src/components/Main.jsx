@@ -9,8 +9,6 @@ import Logo from "./Logo";
 import { getPosts } from "../api";
 
 
-
-
 const Main = () => {
   const [isLogin, SetLogin] = useState(false)
   const [posts, setAllPosts] = useState([]);
