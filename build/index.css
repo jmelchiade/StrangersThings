@@ -1,0 +1,426 @@
+body {
+  font-family: 'Raleway', Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: black;
+}
+.detailsBox {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid rgb(128, 8, 8);
+  margin-left: 240px;
+width: 50%;
+}
+.deleteBtnPage {
+  cursor: pointer;
+  margin-left: 130px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+#seeDetailsBtn {
+  cursor: pointer;
+  margin-left: 180px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+#sendMessageBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 180px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+#messageForm.input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+.editDeleteBtn {
+  display: flex;
+}
+#post {
+  border: 2px solid rgb(128, 8, 8);
+  display:grid;
+  flex-direction: column;
+  margin-left: 240px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  color: white;
+  width: 50%;
+ text-align: left;
+}
+.editBtnPage {
+  cursor: pointer;
+  width: 100px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+
+}
+.addNewPostBtn {
+  cursor: pointer;
+}
+#location, #description, #price, #willDeliver, #title {
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+#description{
+  margin-left: 10px;
+}
+#title {
+  margin-left: 60px;
+}
+#price {
+  margin-left: 55px;
+}
+#location {
+  margin-left: 30px;
+}
+#willDeliver {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+#userFront, #passFront, #userRegForm, #passRegForm{
+  display: flex;
+  justify-content: center;
+}
+#logInFront, #regHeader{
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+label {
+  color: white;
+  display: flex;
+  margin-left: 20px;
+}
+#picture {
+  height: 80px;
+  width: auto;
+}
+
+b{
+  color: white;
+  font-size: 20px;
+}
+p {
+  margin-left: 20px;
+  margin-right: 20px;
+  /* color: white; */
+}
+
+h1 {
+  color: white;
+}
+.box {
+  color: white;
+}
+#goBackBtn {
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 200px;
+}
+.searchBtn {
+  cursor: pointer;
+}
+#navLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 21px;
+  color: white;
+  height: 30px;
+  width: 100px;
+ 
+}
+#logOut{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 21px;
+  height: 30px;
+  width: 100px;
+ 
+}
+#navLogin:hover, #logOut:hover, #navReg:hover, #navPosts:hover, #navProfile:hover {
+  cursor: pointer;
+  background-color: rgb(13, 13, 146);
+}
+#navReg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 21px;
+  border: 2px solid white;
+  color: white;
+  height: 30px;
+  width: 100px;
+  
+
+}
+#navPosts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 21px;
+  text-decoration: none;
+  border: 2px solid white;
+  color: white;
+  height: 30px;
+  width: 100px;
+  
+
+}
+#navProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 21px;
+  color: white;
+  height: 30px;
+  width: 100px;
+
+}
+#createBtn {
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+  height: 25px;
+}
+
+#navbar {
+  font-family: 'Poller One', Arial, sans-serif;
+  flex-grow: 1;
+  background-color: rgb(128, 8, 8);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 77px;
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#navbar div {
+  padding: 5px;
+}
+
+#allPostBlock {
+  border: 2px solid rgb(128, 8, 8);
+  display:grid;
+  flex-direction: column;
+  margin-left: 240px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  color: white;
+  width: 50%;
+}
+
+#userMessages{
+  border: 2px solid rgb(128, 8, 8);
+  display:grid;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.regForm {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.loginForm{
+  display:flex;
+  justify-content: center;
+  color: white;
+
+}
+
+#username {
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+#password{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+}
+
+#logInBtn, #subBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 147px;
+  background-color: white;
+  color: red;
+  font-family: fantasy;
+  margin-left: 35px;
+ 
+}
+
+#logInBtn:hover, #subBtn:hover{
+  cursor: pointer;
+  background-color: silver;
+  color: blue;
+}
+
+#profileTxt{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+#addPost{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 21px;
+}
+
+
+.st {
+  width: 850px;
+  margin: 2rem auto -50px auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 8rem;
+  font-family: 'ITC Benguiat W01';
+  font-weight: 800;
+  /* color: #1c0502; */
+  color:navy;
+  text-shadow: -0.05rem -0.05rem 1px #ed2b12,
+    0.05rem -0.05rem 1px #ed2b12,
+    -0.05rem 0.05rem 1px #ed2b12,
+    0.05rem 0.05rem 1px #ed2b12,
+    0 0 15px #630100,
+    0 0 20px #450100;
+  letter-spacing: -2px;
+}
+
+.st p {
+  display: inline-block;
+  margin: 0;
+}
+
+/* .st-bound {
+  box-shadow: -0.05rem -0.05rem 2px #ed2b12,
+    15rem -0.05rem 2px #ed2b12,
+    -0.05rem 0.05rem 2px #ed2b12,
+    0.05rem 0.05rem 2px #ed2b12;
+  height: 5px;
+} */
+
+.st-bound-full {
+  width: 100%;
+  margin: auto;
+  margin-bottom: -1.2rem;
+  max-width: 612px;
+  margin-left: 5px;
+}
+
+.st-bound-mini {
+  margin-top: 0.5rem;
+}
+
+.st-bound-left {
+  float: left;
+  width: 99px;
+  position: relative;
+  left: px;
+}
+
+.st-bound-right {
+  float: right;
+  width: 103px;
+  left: 0.3rem;
+  position: relative;
+}
+
+.st-bottom {
+  clear: both;
+  top: -3.75rem;
+  position: relative;
+  left: .6rem;
+  letter-spacing: 2px;
+}
+
+.st-drop {
+  line-height: 0;
+  position: relative;
+  top: 1.55rem;
+}
+
+.st-stranger-s {
+  font-size: 10.5rem;
+  letter-spacing: -8px;
+}
+
+.st-stranger-t {
+  letter-spacing: 0;
+}
+
+.st-stranger-n {
+  letter-spacing: -5px;
+}
+
+.st-stranger-g {
+  letter-spacing: 0;
+}
+
+.st-stranger-r-2 {
+  letter-spacing: 0;
+}
+
+.st-stranger-s-2 {
+  font-size: 10.5rem;
+  letter-spacing: 1;
+  margin-left: -35px;
+}
+
+.st-things-t {
+  font-size: 104%;
+  letter-spacing: 2px;
+}
+
+.st-things-n {
+  letter-spacing: -5px;
+}
+
+.st-things-g {
+  letter-spacing: -3px;
+}

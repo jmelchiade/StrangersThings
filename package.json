@@ -5,7 +5,7 @@
   "scripts": {
     "start-dev": "NODE_ENV='development' react-scripts start",
     "start": "react-scripts start",
-    "client:build": "react-scripts build"
+    "build": "react-scripts build"
   },
   "keywords": [],
   "author": "",
