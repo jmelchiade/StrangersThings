@@ -43,7 +43,7 @@ const Profile = (props) => {
   console.log("all user posts", allUserPosts);
   return (
     <div>
-      <h2 id="profileTxt">Welcome Back, "INSERT_USERNAME" </h2>
+      <h2 id="profileTxt">Welcome to Your Profile</h2>
       <CreateNewPost
         allUserPosts={allUserPosts}
         setAllUserPosts={setAllUserPosts}

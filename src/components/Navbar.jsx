@@ -28,7 +28,7 @@ const Navbar = (props) => {
         Profile
       </NavLink>
       {props.isLogin ? (
-        <button
+        <button id="logOut"
           onClick={() => {
             props.SetLogin(false);
             localStorage.removeItem('token');

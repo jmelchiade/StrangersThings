@@ -130,7 +130,18 @@ h1 {
   width: 100px;
  
 }
-#navLogin:hover, #navReg:hover, #navPosts:hover, #navProfile:hover {
+#logOut{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 21px;
+  height: 30px;
+  width: 100px;
+ 
+}
+#navLogin:hover, #logOut:hover, #navReg:hover, #navPosts:hover, #navProfile:hover {
   cursor: pointer;
   background-color: rgb(13, 13, 146);
 }
