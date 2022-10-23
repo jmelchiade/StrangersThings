@@ -15,12 +15,12 @@ const Register = (props) => {
         localStorage.setItem('token', token)
     }
   return (
-    <div><h1>Register</h1>
+    <div><div id="regHeader">Register</div>
     <div className="regForm">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username" >Username: </label>
+        <label id="userRegForm" htmlFor="username" >Username: </label>
         <input id="username" type="text" required />
-        <label htmlFor="password" >Password: </label>
+        <label id="passRegForm" htmlFor="password" >Password: </label>
         <input id="password" type='password' />
         <button id="subBtn" type="submit">Submit</button> 
       </form>

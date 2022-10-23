@@ -5,7 +5,7 @@ const Logo = () => {
     <div className="st">
       <div className="st-top">
         <div className="st-bound st-bound-full"></div>
-        <p>
+        <p id="topLogoFr">
           <span className="st-drop st-stranger-s">S</span>
           <span className="st-stranger-t">t</span>
           <span className="st-stranger-r">r</span>
@@ -22,7 +22,7 @@ const Logo = () => {
       </div>
 
       <div className="st-bottom">
-        <p>
+        <p id="bottomLogoFr">
           <span className="st-things-t">T</span>
           <span className="st-things-h">h</span>
           <span className="st-things-i">i</span>

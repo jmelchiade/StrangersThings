@@ -79,7 +79,7 @@ const CreateNewPost = (props) => {
       {/* <input id="description" defaultValue={formDetails.description} />
       <input id="price" defaultValue={formDetails.price} />
       <input id="location" defaultValue={formDetails.location} /> */}
-      <button type="submit">Add New Post</button>
+      <button class="addNewPostBtn" type="submit">Add New Post</button>
     </form>
   );
 };

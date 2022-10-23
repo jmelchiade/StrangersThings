@@ -54,7 +54,10 @@ const Profile = (props) => {
             if (post.active) {
               return (
                 <div key={`posts-${post._id}`}>
-                  <div id="post">
+
+
+                  <div id="allPostBlock">
+                  <div>
                     <p>
                       <b>Title: </b>
                       {post.title}
@@ -78,7 +81,8 @@ const Profile = (props) => {
                       {post.price}
                     </p>
                   </div>
-                  <button
+                  <div id="editDeleteBtn">
+                  <button class="deleteBtnPage"
                     id={post._id ? `${post._id}` : null}
                     onClick={(e) => {
                       handleDelete(e);
@@ -87,7 +91,7 @@ const Profile = (props) => {
                     Delete Post
                   </button>
                   <span>
-                    <button
+                    <button class="editBtnPage"
                       id={post._id ? `${post._id}` : null}
                       onClick={(e) => {
                         handleEdit(e);
@@ -97,6 +101,8 @@ const Profile = (props) => {
                       Edit Post
                     </button>
                   </span>
+</div>
+                  
                   <div>
                     {post.messages.length
                       ? post.messages.map((message) => {
@@ -104,7 +110,7 @@ const Profile = (props) => {
                         })
                       : null}
                   </div>
-                  
+                  </div>
                 </div>
               );
             } else {

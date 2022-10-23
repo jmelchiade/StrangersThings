@@ -20,19 +20,19 @@ const Login = (props) => {
 
 
   return (
-    <div><h1>Log In</h1>
+    <div><div id="logInFront">Log In</div>
     <div className="loginForm">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username: </label>
+        <label id="userFront" htmlFor="username">Username: </label>
         <input id="username" type="text" required />
-        <label htmlFor="password" >Password: </label>
+        <label id="passFront" htmlFor="password" >Password: </label>
         <input id="password" type='password' />
         <button id="logInBtn" type="submit">LOG IN</button> 
       </form>
-      link the register page to open from here "create account"
+      {/* link the register page to open from here "create account"
       remove register from navbar
       add log out to navbar only once logged in; brings user to posts/home page.
-      add styling effect to selected and active page - have shown in navbar, i.e. color remains highlighted...
+      add styling effect to selected and active page - have shown in navbar, i.e. color remains highlighted... */}
     </div></div>
   );
 };

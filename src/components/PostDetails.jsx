@@ -53,27 +53,32 @@ const PostDetails = (props) => {
     <>
       {post ? (
         <>
-          <div className="box">
-            <div>{post.title} </div>
-            <div>{post.description} </div>
-            <div>{post.price} </div>
-            <div>{post.location} </div>
-            <label htmlFor="will-deliver">Will Deliver</label>
+          <div className="detailsBox">
+            <p>
+              <div>
+                <b>Title: </b>
+                {post.title}{" "}
+              </div>
+              <div>
+                <b>Description: </b>
+                {post.description}{" "}
+              </div>
+              <div>
+                <b>Price: </b>
+                {post.price}{" "}
+              </div>
+              <div>
+                <b>Location: </b>
+                {post.location}{" "}
+              </div>
+              <div>
+                <b>Will Deliver: </b>
+                {post.willDeliver}{" "}
+              </div>
+            </p>
             <Link to={"/posts"}>
-              <button>Go Back</button>
+              <button id="goBackBtn">Go Back</button>
             </Link>
-          </div>
-          <div className="box">
-            {/* instead of a form here we could just have another component */}
-            
-            {/* <button
-              id={post._id ? `${post._id}` : null}
-              onClick={(e) => {
-                handleDelete(e);
-              }}
-            >
-              Delete Post
-            </button> */}
           </div>
         </>
       ) : (

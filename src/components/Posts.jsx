@@ -1,43 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { getPosts } from "../api";
 import SinglePost from "./SinglePost";
-
-
+import SearchBar from "./SearchBar";
 
 const Posts = (props) => {
-  const [query, setQuery] = useState("")
-  const posts = props.posts;
-  const onSearch=() => {
-    posts.filter((post) => post.id === val)
-  }
+const posts = props.posts;
+
   return (
     <div>
       <h1>
-        {/* /// original search component /// */}
-
         Search Posts:
         <input type="text" onChange={(e) => setQuery(e.target.value)} />
         <button className="searchBtn"> Search </button>
-
-
-
-        {/* /// possible new sear component /// */}
-
-        {/* <form onChange={handleChange} onSubmit={handleSubmit}>
-              <input id="title" defaultValue={formDetails.title} />
-              <input id="description" defaultValue={formDetails.description} />
-              <input id="price" defaultValue={formDetails.price} />
-              <input id="location" defaultValue={formDetails.location} />
-              <button type="submit">Submit</button>
-            </form> */}
-
-
       </h1>
+      {/* <SearchBar /> */}
       <SinglePost posts={posts} />{" "}
     </div>
   );
 };
 
 export default Posts;
-
-

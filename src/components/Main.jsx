@@ -7,6 +7,7 @@ import Profile from "./Profile";
 import { Routes, Route } from "react-router-dom";
 import Logo from "./Logo";
 import { getPosts } from "../api";
+import SearchBar from "./SearchBar";
 
 
 

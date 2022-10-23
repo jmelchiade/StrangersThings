@@ -39,10 +39,10 @@ const SinglePost = (props) => {
                   <b>Price: </b>
                   {post.price}
                 </p>
-              </div>
               <Link to={`details/${post._id}`}>
-                <button>See Details</button>
+                <button id="seeDetailsBtn">See Details</button>
               </Link>
+              </div>
             </div>
           );
         })
