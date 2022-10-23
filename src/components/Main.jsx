@@ -7,7 +7,7 @@ import Profile from "./Profile";
 import { Routes, Route } from "react-router-dom";
 import Logo from "./Logo";
 import { getPosts } from "../api";
-import SearchBar from "./SearchBar";
+
 
 
 
@@ -15,6 +15,7 @@ const Main = () => {
   const [isLogin, SetLogin] = useState(false)
   const [posts, setAllPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [content, setContent] = useState("")
 
   useEffect(() => {
     async function fetchPosts() {
@@ -37,12 +38,12 @@ const Main = () => {
         <Route path="posts">
         <Route
             path="details/:id"
-            element={<PostDetails filterPosts={filterPosts} />}
+            element={<PostDetails setContent = {setContent} filterPosts={filterPosts} />}
           ></Route>
           <Route path="" element={<Posts posts={filteredPosts.length?filteredPosts:posts} setFilteredPosts = {setFilteredPosts}/>} />
         </Route>
         <Route path="login" element={<Login isLogin={isLogin} SetLogin={SetLogin}/>} />
-        <Route path="profile" element={<Profile setAllPosts={setAllPosts} posts={posts}/>} />
+        <Route path="profile" element={<Profile content={content} setContent={setContent}setAllPosts={setAllPosts} posts={posts}/>} />
       </Routes>
     </div>
   );

@@ -26,6 +26,22 @@ width: 50%;
   width: 100px;
   margin-bottom: 10px;
 }
+
+#sendMessageBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 180px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+#messageForm.input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
 .editDeleteBtn {
   display: flex;
 }

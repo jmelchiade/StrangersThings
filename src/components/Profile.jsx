@@ -5,8 +5,11 @@ import { getUserInfo, deletePost } from "../api";
 const Profile = (props) => {
   const setAllPosts = props.setAllPosts;
   const posts = props.posts;
+  const [content, setContent] = useState("") 
   const [allUserPosts, setAllUserPosts] = useState({ posts: [] });
   const [allUserMessages, setAllUserMessages] = useState({ messages: [] });
+
+
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -17,6 +20,9 @@ const Profile = (props) => {
     }
     fetchUserPosts();
   }, []);
+
+ 
+
 
   async function handleDelete(e) {
     e.preventDefault();
@@ -32,14 +38,7 @@ const Profile = (props) => {
     setAllPosts(postArrayMinusDeletedPost);
   }
 
-  // async function handleEdit(e) {
 
-  // }
-
-  // create useEffect for messages/ revise async function in index api
-  // useEffect(() => {}
-
-  // Need to create another map for messages such as allUserMessages.posts.messages.map(())
   console.log("all user posts", allUserPosts);
   return (
     <div>
@@ -81,8 +80,9 @@ const Profile = (props) => {
                       {post.price}
                     </p>
                   </div>
+         
                   <div id="editDeleteBtn">
-                  <button class="deleteBtnPage"
+                  <button className="deleteBtnPage"
                     id={post._id ? `${post._id}` : null}
                     onClick={(e) => {
                       handleDelete(e);
@@ -91,7 +91,7 @@ const Profile = (props) => {
                     Delete Post
                   </button>
                   <span>
-                    <button class="editBtnPage"
+                    <button className="editBtnPage"
                       id={post._id ? `${post._id}` : null}
                       onClick={(e) => {
                         handleEdit(e);
@@ -118,6 +118,7 @@ const Profile = (props) => {
             }
           })
         : null}
+
     </div>
   );
 };

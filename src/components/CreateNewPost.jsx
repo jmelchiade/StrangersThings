@@ -10,11 +10,6 @@ const CreateNewPost = (props) => {
   // line 9 had a useState defined as false
   const { allUserPosts, setAllUserPosts } = props;
 
-  // const CreateNewPosts = props.CreateNewPosts.sort((a,b) => { 
-  //   let date3 = new Date(a.createdAt) 
-  //   let date4 = new Date(b.createdAt) 
-  //   return date4.getNewTime() - date3.getNewTime()
-  // })
 
   console.log(allUserPosts);
   async function handleSubmit(e) {
@@ -76,10 +71,7 @@ const CreateNewPost = (props) => {
           defaultValue={willDeliver}
         />
       </label>
-      {/* <input id="description" defaultValue={formDetails.description} />
-      <input id="price" defaultValue={formDetails.price} />
-      <input id="location" defaultValue={formDetails.location} /> */}
-      <button class="addNewPostBtn" type="submit">Add New Post</button>
+      <button className="addNewPostBtn" type="submit">Add New Post</button>
     </form>
   );
 };

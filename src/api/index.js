@@ -133,3 +133,21 @@ export async function logoutUser(username, password) {
   const result = await response.json();
   return result.data;
 }
+
+export async function sendMessage(id, token, content) {
+  const options = {
+      method: "POST",
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        message: {
+              content
+          }
+      })
+  }
+  const response = await fetch(`${BASE_URL}/api/${COHORT}/posts/${id}/messages`, options)
+  const result = await response.json()
+  return result.data
+}

@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { updatePost, deletePost } from "../api";
+import { updatePost, deletePost, sendMessage } from "../api";
 
 const PostDetails = (props) => {
   console.log(
     "I am a banana, can I not delete this right now I think it's funny"
   );
   const { id } = useParams();
+  const [content, setContent] = useState("")
   const post = props.filterPosts(id)[0];
   const [formDetails, setFormDetails] = useState({
     title: "",
+    author: "",
     description: "",
     price: "",
     location: "",
@@ -19,12 +21,22 @@ const PostDetails = (props) => {
     post
       ? setFormDetails({
           title: post.title,
+          author: post.username,
           description: post.description,
           price: post.price,
           location: post.location,
         })
       : null;
   }, []);
+
+  async function handleMessage(e){
+    e.preventDefault()
+    
+    const token =localStorage.getItem('token')
+    const message = await sendMessage(post._id,token,content)
+   console.log(message)
+  }
+
   function handleChange(e) {
     e.preventDefault();
     const toUpdate = e.target.id;
@@ -60,6 +72,10 @@ const PostDetails = (props) => {
                 {post.title}{" "}
               </div>
               <div>
+                <b>Author: </b>
+                {post.username}{" "}
+              </div>
+              <div>
                 <b>Description: </b>
                 {post.description}{" "}
               </div>
@@ -76,6 +92,16 @@ const PostDetails = (props) => {
                 {post.willDeliver}{" "}
               </div>
             </p>
+            <div><form  onSubmit={handleMessage}>
+    <input id="messageForm"
+       className="input"
+       type="text"
+       name="name"
+       placeholder="Write message to Post Author"
+        onChange={(e) => setContent(e.target.value)}
+     ></input>
+<button id="sendMessageBtn">Send Message</button>
+</form></div>
             <Link to={"/posts"}>
               <button id="goBackBtn">Go Back</button>
             </Link>
