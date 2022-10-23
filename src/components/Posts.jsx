@@ -4,14 +4,18 @@ import SinglePost from "./SinglePost";
 import SearchBar from "./SearchBar";
 
 const Posts = (props) => {
-const posts = props.posts;
-
+const [query, setQuery] = useState("")
+  const posts = props.posts;
+  const onSearch=() => {
+    const filteredSearch = posts.filter((post) => post.title.toLowerCase().includes(query.toLowerCase()) )
+  props.setFilteredPosts(filteredSearch)
+  }
   return (
     <div>
       <h1>
         Search Posts:
         <input type="text" onChange={(e) => setQuery(e.target.value)} />
-        <button className="searchBtn"> Search </button>
+        <button onClick = {onSearch}className="searchBtn"> Search </button>
       </h1>
       {/* <SearchBar /> */}
       <SinglePost posts={posts} />{" "}

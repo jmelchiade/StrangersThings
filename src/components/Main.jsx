@@ -13,8 +13,9 @@ import SearchBar from "./SearchBar";
 
 const Main = () => {
   const [isLogin, SetLogin] = useState(false)
-
   const [posts, setAllPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
   useEffect(() => {
     async function fetchPosts() {
       const allPosts = await getPosts();
@@ -34,11 +35,11 @@ const Main = () => {
       <Routes>
         <Route path="register" element={<Register SetLogin={SetLogin} />} />
         <Route path="posts">
-          <Route
+        <Route
             path="details/:id"
             element={<PostDetails filterPosts={filterPosts} />}
           ></Route>
-          <Route path="" element={<Posts posts={posts} />} />
+          <Route path="" element={<Posts posts={filteredPosts.length?filteredPosts:posts} setFilteredPosts = {setFilteredPosts}/>} />
         </Route>
         <Route path="login" element={<Login isLogin={isLogin} SetLogin={SetLogin}/>} />
         <Route path="profile" element={<Profile setAllPosts={setAllPosts} posts={posts}/>} />
