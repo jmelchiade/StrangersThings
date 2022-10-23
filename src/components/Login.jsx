@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { loginUser } from "../api";
 import { useNavigate } from "react-router-dom";
 
 
 
 const Login = (props) => {
+  const [userName, setUsername] = useState([])
   let navigate  = useNavigate()
     async function handleSubmit(event) {
         event.preventDefault()
@@ -15,6 +16,8 @@ const Login = (props) => {
         props.SetLogin(true)
         localStorage.removeItem('token')
         localStorage.setItem('token', token)
+        setUsername(userName)
+        props.userLogin()
         navigate('/profile')
     }
 

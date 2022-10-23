@@ -11,9 +11,22 @@ import { getPosts } from "../api";
 
 const Main = () => {
   const [isLogin, SetLogin] = useState(false)
+  const [userLoggedIn, setUserLoggedIn] = useState({})
   const [posts, setAllPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [content, setContent] = useState("")
+
+  const userLogin = async () => {
+    const user = await getUserInfo(localStorage.getItem("token"));
+    setUserLoggedIn(user);
+    SetLogin(true);
+  }
+  useEffect(()=>{
+    if (localStorage.getItem("token")){
+      userLogin()
+    }git
+  },[]);
+
 
   useEffect(() => {
     async function fetchPosts() {
@@ -40,8 +53,8 @@ const Main = () => {
           ></Route>
           <Route path="" element={<Posts posts={filteredPosts.length?filteredPosts:posts} setFilteredPosts = {setFilteredPosts}/>} />
         </Route>
-        <Route path="login" element={<Login isLogin={isLogin} SetLogin={SetLogin}/>} />
-        <Route path="profile" element={<Profile content={content} setContent={setContent}setAllPosts={setAllPosts} posts={posts}/>} />
+        <Route path="login" element={<Login isLogin={isLogin} userLogin={userLogin} SetLogin={SetLogin}/>} />
+        <Route path="profile" element={<Profile userLoggedIn={userLoggedIn} content={content} setContent={setContent}setAllPosts={setAllPosts} posts={posts}/>} />
       </Routes>
     </div>
   );

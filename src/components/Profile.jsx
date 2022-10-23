@@ -7,9 +7,11 @@ const Profile = (props) => {
   const posts = props.posts;
   const [allUserPosts, setAllUserPosts] = useState({ posts: [] });
   const [allUserMessages, setAllUserMessages] = useState({ messages: [] });
-// const isLogin = props.isLogin
-// const messages = props.isLogin.messages
-// const username = props.isLogin.username
+
+const userLoggedIn = props.userLoggedIn
+const messages = props.userLoggedIn.messages
+const username = props.userLoggedIn.username
+console.log(userLoggedIn, 'checking log in')
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -40,7 +42,7 @@ const Profile = (props) => {
   console.log("all user posts", allUserPosts);
   return (
     <div>
-      <h2 id="profileTxt">Welcome to Your Profile</h2>
+      <h2 id="profileTxt">{`Welcome ${username}`}</h2>
       {/* <div className='messages'>
         <h3>Received Messages </h3>
         { messages ?
