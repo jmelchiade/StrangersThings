@@ -7,7 +7,7 @@ const PostDetails = (props) => {
     "I am a banana, can I not delete this right now I think it's funny"
   );
   const { id } = useParams();
-  const [content, setContent] = useState("")
+  const [content, setContent] = useState("");
   const post = props.filterPosts(id)[0];
   const [formDetails, setFormDetails] = useState({
     title: "",
@@ -29,12 +29,12 @@ const PostDetails = (props) => {
       : null;
   }, []);
 
-  async function handleMessage(e){
-    e.preventDefault()
-    
-    const token =localStorage.getItem('token')
-    const message = await sendMessage(post._id,token,content)
-   console.log(message)
+  async function handleMessage(e) {
+    e.preventDefault();
+
+    const token = localStorage.getItem("token");
+    const message = await sendMessage(post._id, token, content);
+    console.log(message);
   }
 
   function handleChange(e) {
@@ -73,7 +73,7 @@ const PostDetails = (props) => {
               </div>
               <div>
                 <b>Author: </b>
-                {post.username}{" "}
+                {post.author.username}{" "}
               </div>
               <div>
                 <b>Description: </b>
@@ -92,16 +92,19 @@ const PostDetails = (props) => {
                 {post.willDeliver}{" "}
               </div>
             </p>
-            <div><form  onSubmit={handleMessage}>
-    <input id="messageForm"
-       className="input"
-       type="text"
-       name="name"
-       placeholder="Write message to Post Author"
-        onChange={(e) => setContent(e.target.value)}
-     ></input>
-<button id="sendMessageBtn">Send Message</button>
-</form></div>
+            <div>
+              <form onSubmit={handleMessage}>
+                <input
+                  id="messageForm"
+                  className="input"
+                  type="text"
+                  name="name"
+                  placeholder="Write message to Post Author"
+                  onChange={(e) => setContent(e.target.value)}
+                ></input>
+                <button id="sendMessageBtn">Send Message</button>
+              </form>
+            </div>
             <Link to={"/posts"}>
               <button id="goBackBtn">Go Back</button>
             </Link>

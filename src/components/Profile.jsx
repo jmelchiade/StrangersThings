@@ -7,22 +7,23 @@ const Profile = (props) => {
   const posts = props.posts;
   const [allUserPosts, setAllUserPosts] = useState({ posts: [] });
   const [allUserMessages, setAllUserMessages] = useState({ messages: [] });
+  const [currentUserName, setCurrentUserName] = useState("");
 
-const userLoggedIn = props.userLoggedIn
-const messages = props.userLoggedIn.messages
-const username = props.userLoggedIn.username
-console.log(userLoggedIn, 'checking log in')
+  const userLoggedIn = props.userLoggedIn;
+  const messages = props.userLoggedIn.messages;
+  const username = props.userLoggedIn.username;
+  console.log(userLoggedIn, "checking log in");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     async function fetchUserPosts() {
       const userPosts = await getUserInfo(token);
       console.log(userPosts);
+      setCurrentUserName(userPosts.username);
       setAllUserPosts(userPosts.posts);
     }
     fetchUserPosts();
   }, []);
-
 
   async function handleDelete(e) {
     e.preventDefault();
@@ -38,11 +39,10 @@ console.log(userLoggedIn, 'checking log in')
     setAllPosts(postArrayMinusDeletedPost);
   }
 
-
   console.log("all user posts", allUserPosts);
   return (
     <div>
-      <h2 id="profileTxt">{`Welcome ${username}`}</h2>
+      <h2 id="profileTxt">{`Welcome ${currentUserName}`}</h2>
       {/* <div className='messages'>
         <h3>Received Messages </h3>
         { messages ?
@@ -52,8 +52,8 @@ console.log(userLoggedIn, 'checking log in')
             <div>Message: {message.content}</div>
             <div>From :{message.fromUser.username}</div>
             <div></div> */}
-            {/* </div> */}
-            {/* );
+      {/* </div> */}
+      {/* );
           }): 
           
           <h2>No Messages Currently</h2>}</div> 
@@ -69,63 +69,66 @@ console.log(userLoggedIn, 'checking log in')
             if (post.active) {
               return (
                 <div key={`posts-${post._id}`}>
-
-
                   <div id="allPostBlock">
-                  <div>
-                    <p>
-                      <b>Title: </b>
-                      {post.title}
-                    </p>
-                    {post.author ? (
+                    <div>
                       <p>
-                        <b>Author: </b>
-                        {post.author.username}
+                        <b>Title: </b>
+                        {post.title}
                       </p>
-                    ) : null}
-                    <p>
-                      <b>Description: </b>
-                      {post.description}
-                    </p>
-                    <p>
-                      <b>Location: </b>
-                      {post.location}
-                    </p>
-                    <p>
-                      <b>Price: </b>
-                      {post.price}
-                    </p>
-                  </div>
-         
-                  <div id="editDeleteBtn">
-                  <button className="deleteBtnPage"
-                    id={post._id ? `${post._id}` : null}
-                    onClick={(e) => {
-                      handleDelete(e);
-                    }}
-                  >
-                    Delete Post
-                  </button>
-                  <span>
-                    <button className="editBtnPage"
-                      id={post._id ? `${post._id}` : null}
-                      onClick={(e) => {
-                        handleEdit(e);
-                      }}
-                    >
-                
-                      Edit Post
-                    </button>
-                  </span>
-</div>
-                  
-                  <div>
-                    {post.messages.length
-                      ? post.messages.map((message) => {
-                          return <p id="userMessages" key= {message._id}>{message.content}</p>;
-                        })
-                      : null}
-                  </div>
+                      {post.author ? (
+                        <p>
+                          <b>Author: </b>
+                          {currentUserName}
+                        </p>
+                      ) : null}
+                      <p>
+                        <b>Description: </b>
+                        {post.description}
+                      </p>
+                      <p>
+                        <b>Location: </b>
+                        {post.location}
+                      </p>
+                      <p>
+                        <b>Price: </b>
+                        {post.price}
+                      </p>
+                    </div>
+
+                    <div id="editDeleteBtn">
+                      <button
+                        className="deleteBtnPage"
+                        id={post._id ? `${post._id}` : null}
+                        onClick={(e) => {
+                          handleDelete(e);
+                        }}
+                      >
+                        Delete Post
+                      </button>
+                      <span>
+                        <button
+                          className="editBtnPage"
+                          id={post._id ? `${post._id}` : null}
+                          onClick={(e) => {
+                            handleEdit(e);
+                          }}
+                        >
+                          Edit Post
+                        </button>
+                      </span>
+                    </div>
+
+                    <div>
+                      {post.messages.length
+                        ? post.messages.map((message) => {
+                            return (
+                              <p id="userMessages" key={message._id}>
+                                {message.content}
+                              </p>
+                            );
+                          })
+                        : null}
+                    </div>
                   </div>
                 </div>
               );
@@ -134,7 +137,6 @@ console.log(userLoggedIn, 'checking log in')
             }
           })
         : null}
-
     </div>
   );
 };
