@@ -1,5 +1,5 @@
 body {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: "Raleway", Arial, sans-serif;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   border: 2px solid rgb(128, 8, 8);
   margin-left: 240px;
-width: 50%;
+  width: 50%;
 }
 .deleteBtnPage {
   cursor: pointer;
@@ -27,7 +27,7 @@ width: 50%;
   margin-bottom: 10px;
 }
 
-#sendMessageBtn{
+#sendMessageBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@ width: 50%;
   width: 100px;
   margin-bottom: 10px;
 }
-#messageForm.input{
+#messageForm.input {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,30 +47,33 @@ width: 50%;
 }
 #post {
   border: 2px solid rgb(128, 8, 8);
-  display:grid;
+  display: grid;
   flex-direction: column;
   margin-left: 240px;
   margin-right: 20px;
   margin-bottom: 5px;
   color: white;
   width: 50%;
- text-align: left;
+  text-align: left;
 }
 .editBtnPage {
   cursor: pointer;
   width: 100px;
   margin-left: 5px;
   margin-bottom: 10px;
-
 }
 .addNewPostBtn {
   cursor: pointer;
 }
-#location, #description, #price, #willDeliver, #title {
+#location,
+#description,
+#price,
+#willDeliver,
+#title {
   margin-bottom: 5px;
   margin-right: 20px;
 }
-#description{
+#description {
   margin-left: 10px;
 }
 #title {
@@ -86,11 +89,15 @@ width: 50%;
   margin-left: 10px;
   margin-bottom: 10px;
 }
-#userFront, #passFront, #userRegForm, #passRegForm{
+#userFront,
+#passFront,
+#userRegForm,
+#passRegForm {
   display: flex;
   justify-content: center;
 }
-#logInFront, #regHeader{
+#logInFront,
+#regHeader {
   color: white;
   display: flex;
   justify-content: center;
@@ -109,7 +116,7 @@ label {
   width: auto;
 }
 
-b{
+b {
   color: white;
   font-size: 20px;
 }
@@ -144,9 +151,8 @@ h1 {
   color: white;
   height: 30px;
   width: 100px;
- 
 }
-#logOut{
+#logOut {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,9 +161,12 @@ h1 {
   border-radius: 21px;
   height: 30px;
   width: 100px;
- 
 }
-#navLogin:hover, #logOut:hover, #navReg:hover, #navPosts:hover, #navProfile:hover {
+#navLogin:hover,
+#logOut:hover,
+#navReg:hover,
+#navPosts:hover,
+#navProfile:hover {
   cursor: pointer;
   background-color: rgb(13, 13, 146);
 }
@@ -171,8 +180,6 @@ h1 {
   color: white;
   height: 30px;
   width: 100px;
-  
-
 }
 #navPosts {
   display: flex;
@@ -184,8 +191,6 @@ h1 {
   color: white;
   height: 30px;
   width: 100px;
-  
-
 }
 #navProfile {
   display: flex;
@@ -197,7 +202,6 @@ h1 {
   color: white;
   height: 30px;
   width: 100px;
-
 }
 #createBtn {
   cursor: pointer;
@@ -209,7 +213,7 @@ h1 {
 }
 
 #navbar {
-  font-family: 'Poller One', Arial, sans-serif;
+  font-family: "Poller One", Arial, sans-serif;
   flex-grow: 1;
   background-color: rgb(128, 8, 8);
   color: white;
@@ -228,7 +232,7 @@ h1 {
 
 #allPostBlock {
   border: 2px solid rgb(128, 8, 8);
-  display:grid;
+  display: grid;
   flex-direction: column;
   margin-left: 240px;
   margin-right: 20px;
@@ -237,9 +241,9 @@ h1 {
   width: 50%;
 }
 
-#userMessages{
+#userMessages {
   border: 2px solid rgb(128, 8, 8);
-  display:grid;
+  display: grid;
   flex-direction: column;
   margin-left: 20px;
   margin-right: 20px;
@@ -252,35 +256,35 @@ h1 {
   color: white;
 }
 
-.loginForm{
-  display:flex;
+.loginForm {
+  display: flex;
   justify-content: center;
   color: white;
-
 }
 
 #username {
-  display:flex;
+  display: flex;
   justify-content: center;
   text-align: center;
   margin-bottom: 20px;
   margin-left: 20px;
 }
 
-#password{
-  display:flex;
+#password {
+  display: flex;
   justify-content: center;
   margin-bottom: 10px;
   margin-left: 20px;
   text-align: center;
 }
 
-h1{
+h1 {
   display: flex;
   justify-content: center;
 }
 
-#logInBtn, #subBtn {
+#logInBtn,
+#subBtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -288,23 +292,23 @@ h1{
   background-color: white;
   color: red;
   font-family: fantasy;
-  margin-left: 35px;
- 
+  margin-left: 20px;
 }
 
-#logInBtn:hover, #subBtn:hover{
+#logInBtn:hover,
+#subBtn:hover {
   cursor: pointer;
   background-color: silver;
   color: blue;
 }
 
-#profileTxt{
+#profileTxt {
   color: white;
   display: flex;
   justify-content: center;
 }
 
-#addPost{
+#addPost {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -312,22 +316,18 @@ h1{
   padding: 21px;
 }
 
-
 .st {
   width: 850px;
   margin: 2rem auto -50px auto;
   text-align: center;
   text-transform: uppercase;
   font-size: 8rem;
-  font-family: 'ITC Benguiat W01';
+  font-family: "ITC Benguiat W01";
   font-weight: 800;
   /* color: #1c0502; */
-  color:navy;
-  text-shadow: -0.05rem -0.05rem 1px #ed2b12,
-    0.05rem -0.05rem 1px #ed2b12,
-    -0.05rem 0.05rem 1px #ed2b12,
-    0.05rem 0.05rem 1px #ed2b12,
-    0 0 15px #630100,
+  color: navy;
+  text-shadow: -0.05rem -0.05rem 1px #ed2b12, 0.05rem -0.05rem 1px #ed2b12,
+    -0.05rem 0.05rem 1px #ed2b12, 0.05rem 0.05rem 1px #ed2b12, 0 0 15px #630100,
     0 0 20px #450100;
   letter-spacing: -2px;
 }
@@ -338,10 +338,8 @@ h1{
 }
 
 /* .st-bound {
-  box-shadow: -0.05rem -0.05rem 2px #ed2b12,
-    15rem -0.05rem 2px #ed2b12,
-    -0.05rem 0.05rem 2px #ed2b12,
-    0.05rem 0.05rem 2px #ed2b12;
+  box-shadow: -0.05rem -0.05rem 5px #ed2b12, 14.5rem -0.05rem 2px #ed2b12,
+    -0.05rem -0.05rem 2px #ed2b12, -0.05rem -0.05rem 2px #ed2b12;
   height: 5px;
 } */
 
@@ -375,7 +373,7 @@ h1{
   clear: both;
   top: -3.75rem;
   position: relative;
-  left: .6rem;
+  left: 0.6rem;
   letter-spacing: 2px;
 }
 
