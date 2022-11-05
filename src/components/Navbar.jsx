@@ -7,11 +7,7 @@ const Navbar = (props) => {
   return (
     <div id="navbar">
       <div>
-        <img
-          src="https://i.pinimg.com/originals/b0/81/48/b08148b16c37f13fc7fb43d5a8aea45e.jpg"
-          alt="Dustin Henderson"
-          id="picture"
-        ></img>
+        <img src="bike.png" alt="Bike Logo" id="navPicture"></img>
       </div>
       <NavLink id="navLogin" to="login">
         Login
@@ -28,10 +24,11 @@ const Navbar = (props) => {
         Profile
       </NavLink>
       {props.isLogin ? (
-        <button id="logOut"
+        <button
+          id="logOut"
           onClick={() => {
             props.SetLogin(false);
-            localStorage.removeItem('token');
+            localStorage.removeItem("token");
           }}
         >
           Log Out
