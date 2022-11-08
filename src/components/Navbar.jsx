@@ -3,11 +3,13 @@ import Login from "./Login";
 import Register from "./Register";
 import { NavLink } from "react-router-dom";
 
+import bikeImg from "./bike.png";
+
 const Navbar = (props) => {
   return (
     <div id="navbar">
       <div>
-        <img src="bike.png" alt="Bike Logo" id="navPicture"></img>
+        <img src={bikeImg} alt="Bike Logo" id="bikeImg"></img>
       </div>
       <NavLink id="navLogin" to="login">
         Login

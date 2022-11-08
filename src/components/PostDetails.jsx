@@ -61,12 +61,13 @@ const PostDetails = (props) => {
     );
     console.log(updatedPost);
   }
+
   return (
     <>
       {post ? (
         <>
           <div className="detailsBox">
-            <p>
+            <div>
               <div>
                 <b>Title: </b>
                 {post.title}{" "}
@@ -91,19 +92,22 @@ const PostDetails = (props) => {
                 <b>Will Deliver: </b>
                 {post.willDeliver}{" "}
               </div>
-            </p>
+            </div>
             <div>
-              <form onSubmit={handleMessage}>
-                <input
-                  id="messageForm"
-                  className="input"
-                  type="text"
-                  name="name"
-                  placeholder="Write message to Post Author"
-                  onChange={(e) => setContent(e.target.value)}
-                ></input>
-                <button id="sendMessageBtn">Send Message</button>
-              </form>
+              {post &&
+              post.author.username !== localStorage.getItem("username") ? (
+                <form onSubmit={handleMessage}>
+                  <input
+                    id="messageForm"
+                    className="input"
+                    type="text"
+                    name="name"
+                    placeholder="Write message to Post Author"
+                    onChange={(e) => setContent(e.target.value)}
+                  ></input>
+                  <button id="sendMessageBtn">Send Message</button>
+                </form>
+              ) : null}
             </div>
             <Link to={"/posts"}>
               <button id="goBackBtn">Go Back</button>
