@@ -10,14 +10,12 @@ const CreateNewPost = (props) => {
   // line 9 had a useState defined as false
   const { allUserPosts, setAllUserPosts } = props;
 
-
   console.log(allUserPosts);
   async function handleSubmit(e) {
     e.preventDefault();
     const post = { title, description, price, location, willDeliver };
     const token = localStorage.getItem("token");
     const newlyCreatedPost = await createNewPost(post, token);
-    console.log("THIS IS THE BEST COMMENT EVER", newlyCreatedPost);
     setAllUserPosts([...allUserPosts, newlyCreatedPost.post]);
   }
   function handleTitleChange(e) {
@@ -71,7 +69,9 @@ const CreateNewPost = (props) => {
           defaultValue={willDeliver}
         />
       </label>
-      <button className="addNewPostBtn" type="submit">Add New Post</button>
+      <button className="addNewPostBtn" type="submit">
+        Add New Post
+      </button>
     </form>
   );
 };

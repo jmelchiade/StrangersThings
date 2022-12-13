@@ -95,7 +95,7 @@ const Profile = (props) => {
                       </p>
                     </div>
 
-                    <div id="editDeleteBtn">
+                    <span id="editDeleteBtn">
                       <button
                         className="deleteBtnPage"
                         id={post._id ? `${post._id}` : null}
@@ -105,26 +105,26 @@ const Profile = (props) => {
                       >
                         Delete Post
                       </button>
-                      <span>
-                        <button
-                          className="editBtnPage"
-                          id={post._id ? `${post._id}` : null}
-                          onClick={(e) => {
-                            handleEdit(e);
-                          }}
-                        >
-                          Edit Post
-                        </button>
-                      </span>
-                    </div>
 
+                      <button
+                        className="editBtnPage"
+                        id={post._id ? `${post._id}` : null}
+                        onClick={(e) => {
+                          handleEdit(e);
+                        }}
+                      >
+                        Edit Post
+                      </button>
+                    </span>
                     <div>
                       {post.messages.length
                         ? post.messages.map((message) => {
                             return (
-                              <p id="userMessages" key={message._id}>
-                                {message.content}
-                              </p>
+                              <div>
+                                <div id="userMessages" key={message._id}>
+                                  {message.content}
+                                </div>
+                              </div>
                             );
                           })
                         : null}

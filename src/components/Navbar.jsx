@@ -2,7 +2,6 @@ import React from "react";
 import Login from "./Login";
 import Register from "./Register";
 import { NavLink } from "react-router-dom";
-
 import bikeImg from "./bike.png";
 
 const Navbar = (props) => {

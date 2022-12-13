@@ -3,9 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { updatePost, deletePost, sendMessage } from "../api";
 
 const PostDetails = (props) => {
-  console.log(
-    "I am a banana, can I not delete this right now I think it's funny"
-  );
   const { id } = useParams();
   const [content, setContent] = useState("");
   const post = props.filterPosts(id)[0];
