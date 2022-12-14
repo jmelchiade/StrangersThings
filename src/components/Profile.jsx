@@ -6,7 +6,6 @@ const Profile = (props) => {
   const setAllPosts = props.setAllPosts;
   const posts = props.posts;
   const [allUserPosts, setAllUserPosts] = useState({ posts: [] });
-  const [allUserMessages, setAllUserMessages] = useState({ messages: [] });
   const [currentUserName, setCurrentUserName] = useState("");
 
   const userLoggedIn = props.userLoggedIn;
@@ -43,22 +42,7 @@ const Profile = (props) => {
   return (
     <div>
       <h2 id="profileTxt">{`Welcome ${currentUserName}`}</h2>
-      {/* <div className='messages'>
-        <h3>Received Messages </h3>
-        { messages ?
-        messages.map((message) => {
-           if (message.fromUser.username != username ) return (
-           <div key={`message${message._id}`}>
-            <div>Message: {message.content}</div>
-            <div>From :{message.fromUser.username}</div>
-            <div></div> */}
-      {/* </div> */}
-      {/* );
-          }): 
-          
-          <h2>No Messages Currently</h2>}</div> 
-          <div></div> */}
-      {/* <h2 id="profileTxt">{`Welcome, ${username}`}</h2> */}
+
       <CreateNewPost
         allUserPosts={allUserPosts}
         setAllUserPosts={setAllUserPosts}
@@ -116,19 +100,20 @@ const Profile = (props) => {
                         Edit Post
                       </button>
                     </span>
-                    <div>
-                      {post.messages.length
-                        ? post.messages.map((message) => {
-                            return (
-                              <div>
-                                <div id="userMessages" key={message._id}>
-                                  {message.content}
-                                </div>
+                  </div>
+                  <div>
+                    {post.messages.length
+                      ? post.messages.map((message) => {
+                          return (
+                            <div>
+                              <h3 id="message-header">Received Messages</h3>
+                              <div id="userMessages" key={message._id}>
+                                {message.content}
                               </div>
-                            );
-                          })
-                        : null}
-                    </div>
+                            </div>
+                          );
+                        })
+                      : null}
                   </div>
                 </div>
               );

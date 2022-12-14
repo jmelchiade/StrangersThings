@@ -41,6 +41,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 500px;
+  font-family: "Raleway", Arial, sans-serif;
 }
 .editDeleteBtn {
   display: flex;
@@ -253,6 +254,14 @@ h1 {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 5px;
+  color: white;
+}
+
+#message-header {
+  color: white;
+  display: flex;
+  justify-content: center;
+  width: 200px;
 }
 
 .regForm {

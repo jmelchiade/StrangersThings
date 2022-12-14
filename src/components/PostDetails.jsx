@@ -94,14 +94,14 @@ const PostDetails = (props) => {
               {post &&
               post.author.username !== localStorage.getItem("username") ? (
                 <form onSubmit={handleMessage}>
-                  <input
+                  <textarea
                     id="messageForm"
                     className="input"
                     type="text"
                     name="name"
                     placeholder="Write message to Post Author"
                     onChange={(e) => setContent(e.target.value)}
-                  ></input>
+                  ></textarea>
                   <button id="sendMessageBtn">Send Message</button>
                 </form>
               ) : null}
