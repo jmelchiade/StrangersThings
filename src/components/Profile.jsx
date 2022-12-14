@@ -107,7 +107,7 @@ const Profile = (props) => {
                           return (
                             <div>
                               <h3 id="message-header">Received Messages</h3>
-                              <div id="userMessages" key={message._id}>
+                              <div className="userMessages" key={message._id}>
                                 {message.content}
                               </div>
                             </div>

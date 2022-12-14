@@ -247,7 +247,7 @@ h1 {
   width: 50%;
 }
 
-#userMessages {
+.userMessages {
   border: 2px solid rgb(128, 8, 8);
   display: grid;
   flex-direction: column;
